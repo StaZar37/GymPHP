@@ -1,0 +1,363 @@
+* {
+    user-select: none;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1) !important;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    /* background-color: white; */
+    background-color: #040B1D;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+
+.header-underline {
+    position: relative;
+    /*задаём цвет ссылки*/
+    text-decoration: none;
+    /*убираем подчёркивание*/
+}
+
+.header-underline:after {
+    display: block;
+    position: absolute;
+    right: 0;
+    /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;
+    /*задаём длинну линии до наведения курсора*/
+    height: 2px;
+    /*задаём ширину линии*/
+    background-color: #be0fc4;
+    /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out;
+    /*задаём время анимации*/
+}
+
+.header-underline.active:after {
+    width: 100%;
+}
+
+.header-underline:hover:after,
+.header-underline:focus:after {
+    width: 100%;
+    /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+.header-underline:hover {
+    color: #be0fc4;
+}
+
+.pricolation:hover {
+    color: rgb(73, 212, 247);
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 115%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    opacity: 0.7;
+    z-index: 0 !important;
+}
+
+a {
+    color: #f58220;
+    font-weight: 400;
+}
+
+span {
+    font-weight: 300;
+
+}
+
+
+
+
+.mregister {
+    margin: 10px auto 0;
+    position: relative;
+    border-radius: 10px;
+    z-index: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    width: 350px;
+    /* height: 80vh; */
+}
+
+
+.mregister::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#040B1D, #040B1D), linear-gradient(#d400d4, #d400d4), linear-gradient(#040B1D, #040B1D), linear-gradient(#d400d4, #d400d4);
+    animation: animate 20s linear infinite;
+}
+
+.mregister::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: #040B1D;
+    border-radius: 5px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.error {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    padding: 3px;
+    color: #fff;
+    text-align: center;
+    width: 500px;
+    background: #d400d4;
+    position: relative;
+}
+
+.regtext {
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+
+/* .container {
+    padding: 25px 16px 25px 10px;
+    font-weight: 400;
+    overflow: hidden;
+    width: 350px;
+    height: auto;
+} */
+.btn-order {
+    font-style: "Montserrat";
+    font-style: normal;
+    background-color: #be0fc4;
+    border-color: #be0fc4;
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    width: 280px !important;
+    border-radius: 15px;
+    z-index: 1;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 350px;
+    height: auto;
+}
+
+.btn-order:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #165f81, #940a99, #04567c);
+    background-size: 400%;
+    border-radius: 20px;
+    transition: .5s;
+    filter: blur(5px);
+    opacity: 1;
+    animation: animate-btn 15s linear infinite;
+}
+
+.btn-order:hover {
+    color: white !important;
+    background-color: #4f37ef;
+}
+
+.btn-order:hover,
+.btn-order:active {
+    box-shadow: 0 0 14px #4f37ef;
+}
+
+@keyframes animate-btn {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+}
+
+#welcome {
+    width: 500px;
+    padding: 30px;
+    background: #fff;
+    margin: 160px auto 0;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
+}
+
+.container h1 {
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 13px;
+}
+
+.container label {
+    color: #fff;
+    font-size: 18px;
+}
+
+#login {
+    width: 320px;
+    margin: auto;
+    padding-bottom: 15px;
+}
+
+.container form .input:focus,
+.container input[type="text"]:focus,
+.container input[type="password"]:focus,
+.container input[type="e"]:focus {
+    border-bottom: 1.5px solid #d400d4 !important;
+    color: #fff;
+}
+
+.container form .input,
+.container input[type=text],
+.container input[type=password],
+.container input[type=e] {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    border: none !important;
+    border-bottom: 1.5px solid rgb(185, 185, 185) !important;
+    background: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    color: rgb(185, 185, 185);
+    padding: 8px 0 8px;
+    transition: .2s;
+}
+
+.container input[type=text],
+.container input[type=password],
+.container input[type=e] {
+    width: 100%;
+}
+
+.container input[type=date] {
+    width: 220px;
+}
+
+.container form .input:focus {
+    border: 2px solid #d400d4;
+    -webkit-box-shadow: 0 0 3px 0 rgba(212, 0, 212);
+    -moz-box-shadow: 0 0 3px 0 rgba(212, 0, 212);
+    box-shadow: 0 0 3px 0 rgba(212, 0, 212);
+}
+
+/*= КНОПКИ
+         --------------------------------------------------------*/
+
+.button {
+    border: solid 1px #d400d4;
+    background: #d400d4;
+    background: -webkit-gradient(linear, left top, leftbottom, from(#d400d4), to(#d400d4));
+    background: -moz-linear-gradient(top, #d400d4, #d400d4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+    color: #fff;
+    padding: 7px 12px;
+    margin-top: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+}
+
+.button:hover {
+    background: #d400d4;
+    background: -webkit-gradient(linear, left top, leftbottom, from(#d400d4), to(#d400d4));
+    background: -moz-linear-gradient(top, #d400d4, #d400d4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#d400d4');
+}
+
+.log-add-link {
+    color: #fff !important;
+    text-decoration: none !important;
+    font-style: normal !important;
+    transition: .2s;
+}
+
+.log-add-link:hover {
+    color: #d400d4 !important;
+}
+
+/*= ПОДВАЛ
+         --------------------------------------------------------*/
+footer {
+    color: black;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 100vh;
+}
+
+.menu {
+    position: absolute;
+    width: 8%;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #040B1D;
+    margin-left: 32%;
+    margin-top: 3%;
+    color: white;
+}
+
+.tttt div {
+    color: red !important;
+}
